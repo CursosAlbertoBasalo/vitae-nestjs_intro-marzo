@@ -26,10 +26,10 @@ GET http://localhost:3000/multiply/query?a=2&b=3
 GET http://localhost:3000/cube/3
 
 ### GET /cube/:base
-GET http://localhost:3000/cube/-2
+GET http://localhost:3000/cube/-p
 
 ### GET /squareRoot/:someNumber
-GET http://localhost:3000/squaredRoot/3
+GET http://localhost:3000/squareRoot/3
 
 ### GET /squareRoot/:someNumber
 GET http://localhost:3000/squareRoot/-1
