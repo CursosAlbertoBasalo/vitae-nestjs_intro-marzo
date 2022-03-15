@@ -1,2 +1,69 @@
 ### GET /
 GET http://localhost:3000/
+
+### GET /test
+GET http://localhost:3000/test
+
+### GET /param/:id
+GET http://localhost:3000/param/a
+
+### GET /param/:id
+GET http://localhost:3000/param/1
+
+### GET /square/:someParam
+GET http://localhost:3000/square/2
+
+### GET /square/pipe/:someNumber
+GET http://localhost:3000/square/pipe/2
+
+### GET /multiply/pipe/:oneNumber/:otherNumber
+GET http://localhost:3000/multiply/pipe/2/3
+
+### GET /multiply/query
+GET http://localhost:3000/multiply/query?a=2&b=3
+
+### GET /cube/:base
+GET http://localhost:3000/cube/3
+
+### GET /cube/:base
+GET http://localhost:3000/cube/-2
+
+### GET /squareRoot/:someNumber
+GET http://localhost:3000/squaredRoot/3
+
+### GET /squareRoot/:someNumber
+GET http://localhost:3000/squareRoot/-1
+
+### GET /squareRoot/:someNumber
+GET http://localhost:3000/squareRoot/pi
+
+### POST /course
+POST http://localhost:3000/course
+Content-Type: application/json
+
+{
+  "name" : "Intro to NestJS",
+  "date" : "March 2022"
+}
+
+### POST /text
+POST http://localhost:3000/text
+Content-Type: text/plain
+
+Houston, we have a problem
+
+### POST /text
+POST http://localhost:3000/text
+Content-Type: application/x-www-form-urlencoded
+
+message=Houston,the eagle has landed
+
+
+### GET /service/
+GET http://localhost:3000/service/
+
+### GET /service/squareRoot/:someNumber
+GET http://localhost:3000/service/squareRoot/3
+
+### GET /service/squareRoot/:someNumber
+GET http://localhost:3000/service/squareRoot/-1
