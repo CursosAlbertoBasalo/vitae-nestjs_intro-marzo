@@ -1,8 +1,12 @@
 {
   "name": "vitae-nestjs-intro-marzo",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Curso de introducción a NestJS",
+  "author": {
+    "name": "Alberto Basalo",
+    "email": "albertobasalo@hotmail.com",
+    "url": "https://twitter.com/albertobasalo"
+  },
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
