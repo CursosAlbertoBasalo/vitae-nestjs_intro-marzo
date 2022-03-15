@@ -7,9 +7,12 @@
 - [x] Generate app
 - [ ] Root App Controller, api get post data
 - [ ] Root App Service, api agnostic
-- [ ] Modules
-- [ ] Basic Agency CRUD
-- [ ] Basic Trip CRUD
+- [ ] Hand made Utils Module with UUID
+- [ ] _Hand made Auth Module_
+- [ ] Generated Agency CRUD (Module, controller, service, dto)
+- [ ] Use Global service to get UUID
+- [ ] Full generated Resource Trips CRUD
+- [ ] _Full generated Resource Bookings CRUD_
 
 ---
 
