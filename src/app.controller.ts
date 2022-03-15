@@ -94,6 +94,20 @@ export class AppController {
     const objectString = JSON.stringify(text);
     return 'Got an object !! ' + objectString;
   }
+
+  @Get('/service/')
+  getServiceHello(): string {
+    return this.appService.selectHello();
+  }
+
+  @Get('/service/squareRoot/:someNumber')
+  getServiceSquareRoot(@Param('someNumber', ParseIntPipe) someNumber: number): string {
+    try {
+      return this.appService.calculateSquareRoot(someNumber).toString();
+    } catch (e) {
+      throw new HttpException(e.message, HttpStatus.BAD_REQUEST);
+    }
+  }
 }
 
 // class Vitae {

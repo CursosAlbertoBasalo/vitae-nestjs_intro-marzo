@@ -5,8 +5,8 @@
 # Session 1
 
 - [x] Generate app
-- [ ] Root App Controller, api get post data
-- [ ] Root App Service, api agnostic
+- [x] Root App Controller, api get post data
+- [x] Root App Service, api agnostic
 - [ ] Hand made Utils Module with UUID
 - [ ] _Hand made Auth Module_
 - [ ] Generated Agency CRUD (Module, controller, service, dto)

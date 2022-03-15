@@ -67,3 +67,6 @@ GET http://localhost:3000/service/squareRoot/3
 
 ### GET /service/squareRoot/:someNumber
 GET http://localhost:3000/service/squareRoot/-1
+
+### GET /service/squareRoot/:someNumber
+GET http://localhost:3000/service/squareRoot/kk
