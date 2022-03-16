@@ -6,7 +6,7 @@ export class AppService {
     return 'Hello World!';
   }
   calculateSquareRoot(number: number): number {
-    if (number < 0) throw new Error('Number must be greater than 0');
+    if (number < 0) throw new Error('Business Rule: Number must be greater than 0');
     return Math.sqrt(number);
   }
   calculateSquareRootSafe(number: number): number {

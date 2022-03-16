@@ -16,8 +16,8 @@
 
 # 2 Blocks
 
-- [ ] A pipe to validate positive numbers
-- [ ] A filter to transform business errors to http exceptions
+- [x] A pipe to validate positive numbers
+- [x] A filter to transform business errors to http exceptions
 - [ ] A middleware to monitor all requests
 
 ---

@@ -79,3 +79,12 @@ GET http://localhost:3000/service/squareRoot/pipe/-1
 
 ### GET /service/squareRoot/pipe/:someNumber
 GET http://localhost:3000/service/squareRoot/pipe/pi
+
+### GET /service/squareRoot/filter/:someNumber
+GET http://localhost:3000/service/squareRoot/filter/3
+
+### GET /service/squareRoot/filter/:someNumber
+GET http://localhost:3000/service/squareRoot/filter/-1
+
+### GET /service/squareRoot/filter/:someNumber
+GET http://localhost:3000/service/squareRoot/filter/pi

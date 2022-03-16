@@ -8,8 +8,10 @@ import {
   ParseIntPipe,
   Post,
   Query,
+  UseFilters,
 } from '@nestjs/common';
 import { AppService } from './app.service';
+import { BusinessErrorFilter } from './core/filters/business-error.filter';
 import { PositiveNumberPipe } from './core/pipes/positive-number.pipe';
 
 @Controller('')
@@ -109,6 +111,12 @@ export class AppController {
 
   @Get('/service/squareRoot/pipe/:someNumber')
   getServiceSquareRootPipe(@Param('someNumber', PositiveNumberPipe) someNumber: number): string {
+    return this.appService.calculateSquareRootSafe(someNumber).toString();
+  }
+
+  @Get('/service/squareRoot/filter/:someNumber')
+  @UseFilters(BusinessErrorFilter)
+  getServiceSquareRootFilter(@Param('someNumber', ParseIntPipe) someNumber: number): string {
     return this.appService.calculateSquareRoot(someNumber).toString();
   }
 }
