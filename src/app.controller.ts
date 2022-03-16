@@ -10,6 +10,7 @@ import {
   Query,
 } from '@nestjs/common';
 import { AppService } from './app.service';
+import { PositiveNumberPipe } from './core/pipes/positive-number.pipe';
 
 @Controller('')
 export class AppController {
@@ -104,5 +105,10 @@ export class AppController {
     } catch (e) {
       throw new HttpException(e.message, HttpStatus.BAD_REQUEST);
     }
+  }
+
+  @Get('/service/squareRoot/pipe/:someNumber')
+  getServiceSquareRootPipe(@Param('someNumber', PositiveNumberPipe) someNumber: number): string {
+    return this.appService.calculateSquareRoot(someNumber).toString();
   }
 }

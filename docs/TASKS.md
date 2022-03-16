@@ -14,6 +14,12 @@
 - [x] Full generated Resource Trips CRUD
 - [x] _Full generated Resource Bookings CRUD_
 
+# 2 Blocks
+
+- [ ] A pipe to validate positive numbers
+- [ ] A filter to transform business errors to http exceptions
+- [ ] A middleware to monitor all requests
+
 ---
 
 <footer>
