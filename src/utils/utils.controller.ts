@@ -1,11 +1,11 @@
 import { Controller, Get } from '@nestjs/common';
 import { UtilsService } from './utils.service';
 
-@Controller('utils')
+@Controller('')
 export class UtilsController {
   constructor(private readonly utilsService: UtilsService) {}
 
-  @Get('guid')
+  @Get('')
   getGUID(): string {
     return this.utilsService.createGUID();
   }
