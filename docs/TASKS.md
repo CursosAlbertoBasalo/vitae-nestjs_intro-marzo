@@ -12,7 +12,7 @@
 - [x] Generated Agency CRUD (Module, controller, service, dto)
 - [x] Use Global service to get GUID
 - [x] Full generated Resource Trips CRUD
-- [ ] _Full generated Resource Bookings CRUD_
+- [x] _Full generated Resource Bookings CRUD_
 
 ---
 
