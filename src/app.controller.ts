@@ -18,8 +18,6 @@ export class AppController {
   @Get('')
   getHello(): string {
     return 'Hola Vitae';
-    // return new Vitae().saludar();
-    // return this.appService.getHello();
   }
 
   @Get('/test')
@@ -55,7 +53,6 @@ export class AppController {
     const typeOne = typeof oneNumber;
     const typeOther = typeof otherNumber;
     const multiply = oneNumber * otherNumber;
-    // return multiply;
     return `Multiply of ${oneNumber} and ${otherNumber} of type ${typeOne} and ${typeOther} is ${multiply}`;
   }
 
@@ -109,18 +106,3 @@ export class AppController {
     }
   }
 }
-
-// class Vitae {
-//   private nombre = 'Vitae';
-//   //private numero: number;
-
-//   constructor(private numero: number) {
-//     //this.numero = numero;
-//     console.log('Constructor Vitae', numero);
-//   }
-
-//   saludar() {
-//     console.log('Saludando', this.numero);
-//     return 'Hola ' + this.nombre;
-//   }
-//}
