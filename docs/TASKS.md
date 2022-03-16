@@ -9,9 +9,9 @@
 - [x] Root App Service, api agnostic
 - [x] Hand made Utils Module with GUID
 - [x] _Hand made Auth Module_
-- [ ] Generated Agency CRUD (Module, controller, service, dto)
-- [ ] Use Global service to get GUID
-- [ ] Full generated Resource Trips CRUD
+- [x] Generated Agency CRUD (Module, controller, service, dto)
+- [x] Use Global service to get GUID
+- [x] Full generated Resource Trips CRUD
 - [ ] _Full generated Resource Bookings CRUD_
 
 ---
