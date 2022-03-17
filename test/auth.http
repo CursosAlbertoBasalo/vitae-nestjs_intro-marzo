@@ -54,7 +54,7 @@ GET http://localhost:3000/auth/
 
 ### GET /auth/
 GET http://localhost:3000/auth/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsMHV6ZmVucXkzczB1djF3cTRxIiwiaWF0IjoxNjQ3NTIwOTM2LCJleHAiOjE2NDc1MjEyMzZ9.Cy7UtRdsY-fjVN6fpjsyhNRYzrOxhLPT02h-R4gvO1w
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsMHZhcTdnNnZoc2N3aGI5enlpIiwiaWF0IjoxNjQ3NTM5OTE2LCJleHAiOjE2NDc1NDAyMTZ9.NfAv0Xs7In8Hi3GZhrglHGbHlE6a9F9W3E6jD9gEa08
 
 ### GET /auth/me
 GET http://localhost:3000/auth/me

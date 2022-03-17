@@ -42,4 +42,6 @@ npm i @nestjs/passport passport
 npm i @nestjs/jwt passport-jwt
 npm i --save-dev @types/passport-jwt
 
+nest g service auth/jwt-strategy --flat --no-spec
+
 ```

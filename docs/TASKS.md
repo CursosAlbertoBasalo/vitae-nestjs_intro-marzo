@@ -33,8 +33,8 @@
 - [x] Security middlewares (helmet,throttle,)
 - [x] Trips Api Guard
 - [x] JWT token generation
-- [ ] Passport JWT strategy
-- [ ] JWT token validation with AuthGuard and fill req.user
+- [x] Passport JWT strategy
+- [x] JWT token validation with AuthGuard and fill req.user
 - [ ] User Custom Decorator
 
 ---
