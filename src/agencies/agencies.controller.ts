@@ -16,7 +16,15 @@ export class AgenciesController {
     return this.agenciesService.findById(id);
   }
   @Post()
-  postAgency(@Body(ValidationPipe) agency: CreateAgencyDto): AgencyDto {
+  postAgency(
+    @Body(
+      new ValidationPipe({
+        whitelist: true,
+        forbidNonWhitelisted: true,
+      }),
+    )
+    agency: CreateAgencyDto,
+  ): AgencyDto {
     return this.agenciesService.insert(agency);
   }
 }

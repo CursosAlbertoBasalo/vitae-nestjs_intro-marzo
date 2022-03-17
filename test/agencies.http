@@ -4,8 +4,28 @@ GET http://localhost:3000/agencies
 
 ### POST /agencies EMPTY
 POST http://localhost:3000/agencies
+
+### POST /agency BAD
+POST http://localhost:3000/agencies
+Content-Type: application/json
+
+{
+  "name" : 123
+}
+
+### POST /agency OK
+POST http://localhost:3000/agencies
 Content-Type: application/json
 
 {
   "name" : "SpaceY"
+}
+
+### POST /agency welllll
+POST http://localhost:3000/agencies
+Content-Type: application/json
+
+{
+  "name" : "SpaceW",
+  "address" : "123 Space Ave"
 }
