@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { UtilsService } from 'src/utils/utils.service';
 import { AgencyDto } from './dto/agency.dto';
+import { CreateAgencyDto } from './dto/create-agency.dto';
 
 @Injectable()
 export class AgenciesService {
@@ -14,9 +15,12 @@ export class AgenciesService {
   findById(id: string): Partial<AgencyDto> {
     return this.agencies.find((agency) => agency.id === id);
   }
-  insert(agency: AgencyDto): AgencyDto {
-    agency.id = this.utilsService.createGUID();
-    this.agencies.push(agency);
-    return agency;
+  insert(agency: CreateAgencyDto): AgencyDto {
+    const newAgency = {
+      id: this.utilsService.createGUID(),
+      ...agency,
+    };
+    this.agencies.push(newAgency);
+    return newAgency;
   }
 }

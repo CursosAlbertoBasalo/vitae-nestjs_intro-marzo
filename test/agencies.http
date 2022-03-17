@@ -2,17 +2,10 @@
 ### GET /agencies
 GET http://localhost:3000/agencies
 
-### POST /agencies
-# @name newAgency
+### POST /agencies EMPTY
 POST http://localhost:3000/agencies
+Content-Type: application/json
 
-@agencyId = {{newAgency.response.body.$.id}}
-
-### GET /agencies/:id
-GET http://localhost:3000/agencies/{{agencyId}}
-
-
-# ### GET /agencies/:id
-
-# GET http://localhost:3000/agencies/l0s41w8es703v2m0g7
-
+{
+  "name" : "SpaceY"
+}

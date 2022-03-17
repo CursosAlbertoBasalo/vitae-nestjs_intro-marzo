@@ -20,7 +20,7 @@
 - [x] A filter to transform business errors to http exceptions
 - [x] A middleware to monitor all requests
 - [x] Use the NestJS Logger
-- [ ] Validating the Agency DTO
+- [x] Validating the Agency DTO
 - [ ] _Auth DTOs (registration {name, email, password}, login{email, password}, credentials{id, email,token})_
 - [ ] Auth User entity
 - [ ] Auth Service

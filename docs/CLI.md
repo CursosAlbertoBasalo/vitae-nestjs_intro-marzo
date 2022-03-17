@@ -20,4 +20,6 @@ nest g class agencies/dto/update-agency.dto --no-spec
 npm i @nestjs/mapped-types
 nest g resource trips
 nest g resource bookings
+
+npm i class-validator class-transformer
 ```
