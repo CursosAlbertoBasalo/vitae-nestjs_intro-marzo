@@ -30,8 +30,8 @@
 # 3 Security
 
 - [x] Enable CORS
-- [ ] Security middlewares (helmet,throttle,)
-- [ ] Trips Api Guard
+- [x] Security middlewares (helmet,throttle,)
+- [x] Trips Api Guard
 - [ ] JWT token generation
 - [ ] Passport JWT strategy
 - [ ] JWT token validation with AuthGuard and fill req.user

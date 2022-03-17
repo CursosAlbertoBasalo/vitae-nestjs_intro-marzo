@@ -33,8 +33,8 @@ nest g class auth/entities/user --no-spec
 # Filter for unauthorized errors
 nest g filter core/filters/unauthorized-error
 
-
 npm i helmet
 npm i @nestjs/throttler
 
+nest g guard core/guards/api-key
 ```

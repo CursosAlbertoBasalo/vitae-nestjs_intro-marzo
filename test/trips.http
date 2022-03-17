@@ -1,0 +1,12 @@
+
+### GET /trips
+GET http://localhost:3000/trips
+
+
+### POST /trips No api key header
+POST http://localhost:3000/trips
+
+### POST /trips with api key header
+POST http://localhost:3000/trips
+X-API-Key: my-secret-api-key
+
