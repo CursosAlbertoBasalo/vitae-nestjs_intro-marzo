@@ -1,4 +1,5 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, UseFilters } from '@nestjs/common';
+import { UnauthorizedErrorFilter } from 'src/core/filters/unauthorized-error.filter';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { RegistrationDto } from './dto/registration.dto';
@@ -16,6 +17,7 @@ export class AuthController {
     return this.authService.register(registration);
   }
   @Post('login')
+  @UseFilters(UnauthorizedErrorFilter)
   postLogin(@Body() login: LoginDto) {
     return this.authService.login(login);
   }

@@ -21,5 +21,15 @@ npm i @nestjs/mapped-types
 nest g resource trips
 nest g resource bookings
 
+# Class validation
 npm i class-validator class-transformer
+nest g class agencies/dto/create-agency.dto --no-spec
+
+# Basic Auth functionality
+nest g class auth/dto/registration.dto --no-spec
+nest g class auth/dto/login.dto --no-spec
+nest g class auth/dto/credentials.dto --no-spec
+nest g class auth/entities/user --no-spec
+# Filter for unauthorized errors
+nest g filter core/filters/unauthorized-error
 ```

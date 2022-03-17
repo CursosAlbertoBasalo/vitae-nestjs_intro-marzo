@@ -25,7 +25,7 @@
 - [x] Auth User entity
 - [x] Auth Service
 - [x] _Auth Controller (register(registration):credentials login(credentials):credentials)_
-- [ ] _UnauthorizedErrorFilter_
+- [x] _UnauthorizedErrorFilter_
 
 ---
 
