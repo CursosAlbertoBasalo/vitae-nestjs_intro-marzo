@@ -32,4 +32,9 @@ nest g class auth/dto/credentials.dto --no-spec
 nest g class auth/entities/user --no-spec
 # Filter for unauthorized errors
 nest g filter core/filters/unauthorized-error
+
+
+npm i helmet
+npm i @nestjs/throttler
+
 ```

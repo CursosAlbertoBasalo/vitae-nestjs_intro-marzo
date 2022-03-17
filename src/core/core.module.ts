@@ -1,20 +1,16 @@
-import { MiddlewareConsumer, Module, NestModule, ValidationPipe } from '@nestjs/common';
-import { APP_PIPE } from '@nestjs/core';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { ThrottlerModule } from '@nestjs/throttler';
+import helmet from 'helmet';
+import { CORE_PROVIDERS } from './core.providers';
 import { MonitorMiddleware } from './middlewares/monitor.middleware';
 
 @Module({
-  providers: [
-    {
-      provide: APP_PIPE,
-      useValue: new ValidationPipe({
-        whitelist: true,
-        forbidNonWhitelisted: true,
-      }),
-    },
-  ],
+  imports: [ThrottlerModule.forRoot({ ttl: 60, limit: 10 })],
+  providers: CORE_PROVIDERS,
 })
 export class CoreModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
+    consumer.apply(helmet()).forRoutes('*');
     consumer.apply(MonitorMiddleware).forRoutes('*');
   }
 }

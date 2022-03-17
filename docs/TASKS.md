@@ -27,6 +27,16 @@
 - [x] _Auth Controller (register(registration):credentials login(credentials):credentials)_
 - [x] _UnauthorizedErrorFilter_
 
+# 3 Security
+
+- [x] Enable CORS
+- [ ] Security middlewares (helmet,throttle,)
+- [ ] Trips Api Guard
+- [ ] JWT token generation
+- [ ] Passport JWT strategy
+- [ ] JWT token validation with AuthGuard and fill req.user
+- [ ] User Custom Decorator
+
 ---
 
 <footer>
