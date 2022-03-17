@@ -1,15 +1,18 @@
 import { Injectable, Logger } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 import { UtilsService } from 'src/utils/utils.service';
 import { CredentialsDto } from './dto/credentials.dto';
 import { LoginDto } from './dto/login.dto';
 import { RegistrationDto } from './dto/registration.dto';
 import { User } from './entities/user.entity';
-
 @Injectable()
 export class AuthService {
   private readonly users: User[] = [];
   private readonly logger = new Logger('Auth');
-  constructor(private readonly utilsService: UtilsService) {}
+  constructor(
+    private readonly jwtService: JwtService,
+    private readonly utilsService: UtilsService,
+  ) {}
 
   register(registration: RegistrationDto): CredentialsDto {
     const user: User = {
@@ -40,6 +43,9 @@ export class AuthService {
     return credentials;
   }
   private createToken(user: User): string {
-    return 'token';
+    const payload = {
+      sub: user.id,
+    };
+    return this.jwtService.sign(payload, { expiresIn: '5m', secret: 'secret' });
   }
 }

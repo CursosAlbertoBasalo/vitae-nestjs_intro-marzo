@@ -32,7 +32,7 @@
 - [x] Enable CORS
 - [x] Security middlewares (helmet,throttle,)
 - [x] Trips Api Guard
-- [ ] JWT token generation
+- [x] JWT token generation
 - [ ] Passport JWT strategy
 - [ ] JWT token validation with AuthGuard and fill req.user
 - [ ] User Custom Decorator
