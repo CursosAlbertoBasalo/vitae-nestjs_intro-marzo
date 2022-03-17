@@ -21,10 +21,10 @@
 - [x] A middleware to monitor all requests
 - [x] Use the NestJS Logger
 - [x] Validating the Agency DTO
-- [ ] _Auth DTOs (registration {name, email, password}, login{email, password}, credentials{id, email,token})_
-- [ ] Auth User entity
-- [ ] Auth Service
-- [ ] _Auth Controller (register(registration):credentials login(credentials):credentials)_
+- [x] _Auth DTOs (registration {name, email, password}, login{email, password}, credentials{id, email,token})_
+- [x] Auth User entity
+- [x] Auth Service
+- [x] _Auth Controller (register(registration):credentials login(credentials):credentials)_
 - [ ] _UnauthorizedErrorFilter_
 
 ---
