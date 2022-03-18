@@ -37,6 +37,12 @@
 - [x] JWT token validation with AuthGuard and fill req.user
 - [ ] User Custom Decorator
 
+# 4 NoSql with MongoDB
+
+# 5 SQL with PostgreSQL
+
+# 6 Production ready
+
 ---
 
 <footer>
