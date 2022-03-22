@@ -73,7 +73,7 @@ npm i --save-dev @types/passport-jwt
 nest g service auth/jwt-strategy --flat --no-spec
 
 # A parameter decorator to get the user from the request
-touch user.decorator.ts
+code src/auth/user.decorator.ts
 
 #===========================
 # 4 . NoSql with MongoDB

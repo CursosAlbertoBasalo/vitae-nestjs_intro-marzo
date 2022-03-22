@@ -4,6 +4,7 @@ import { UnauthorizedErrorFilter } from 'src/core/filters/unauthorized-error.fil
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { RegistrationDto } from './dto/registration.dto';
+import { GetUser } from './user.decorator';
 
 @Controller('auth')
 export class AuthController {
@@ -12,6 +13,12 @@ export class AuthController {
   @UseGuards(AuthGuard('jwt'))
   getToken(@Req() req) {
     return 'Todo va a salir bien' + JSON.stringify(req.user);
+  }
+
+  @Get('me')
+  @UseGuards(AuthGuard('jwt'))
+  getCurrentUser(@GetUser() user: any) {
+    return 'Todo va a salir bien' + JSON.stringify(user);
   }
 
   @Post('registration')

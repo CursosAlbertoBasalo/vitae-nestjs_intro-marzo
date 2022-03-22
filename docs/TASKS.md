@@ -35,7 +35,7 @@
 - [x] JWT token generation
 - [x] Passport JWT strategy
 - [x] JWT token validation with AuthGuard and fill req.user
-- [ ] User Custom Decorator
+- [x] User Custom Decorator
 
 # 4 NoSql with MongoDB
 
