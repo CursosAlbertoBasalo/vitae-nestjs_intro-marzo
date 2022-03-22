@@ -1,4 +1,4 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { Logger, MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ThrottlerModule } from '@nestjs/throttler';
 import helmet from 'helmet';
@@ -17,6 +17,7 @@ const mongoUri = `mongodb://${mongoUser}:${mongoPass}@${mongoHost}/${mongoDB}?au
 })
 export class CoreModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
+    new Logger('Core').debug(mongoUri);
     consumer.apply(helmet()).forRoutes('*');
     consumer.apply(MonitorMiddleware).forRoutes('*');
   }
