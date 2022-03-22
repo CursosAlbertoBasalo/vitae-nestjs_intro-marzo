@@ -1,16 +1,28 @@
+### GET /agencies/:id
+GET http://localhost:3000/agencies/l12226g3hkctbghzyxw
 
-### GET /agencies
-GET http://localhost:3000/agencies
-
-### POST /agencies EMPTY
-POST http://localhost:3000/agencies
-
-### POST /agency BAD
-POST http://localhost:3000/agencies
+### PUT /agency OK
+PUT  http://localhost:3000/agencies
 Content-Type: application/json
 
 {
-  "name" : 123
+  "_id" : "l12226g3hkctbghzyxw",
+  "name" : "SpaceY",
+  "range": "INTERPLANETARY"
+}
+
+
+### GET /agencies/:id
+GET http://localhost:3000/agencies/kkl12226g3hkctbghzy
+
+### PUT /agency KO
+PUT  http://localhost:3000/agencies
+Content-Type: application/json
+
+{
+  "_id" : "KK2226g3hkctbghzyxw",
+  "name" : "SpaceY",
+  "range": "INTERPLANETARY"
 }
 
 ### POST /agency OK
@@ -18,14 +30,5 @@ POST http://localhost:3000/agencies
 Content-Type: application/json
 
 {
-  "name" : "SpaceY"
-}
-
-### POST /agency welllll
-POST http://localhost:3000/agencies
-Content-Type: application/json
-
-{
-  "name" : "SpaceW",
-  "address" : "123 Space Ave"
+  "name" : "GreenOrigin"
 }

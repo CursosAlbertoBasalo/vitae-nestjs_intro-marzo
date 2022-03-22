@@ -79,6 +79,11 @@ code src/auth/user.decorator.ts
 # 4 . NoSql with MongoDB
 #===========================
 
+npm i mongoose @nestjs/mongoose
+code docker-compose.yml
+nest g service auth/auth-mongo --flat --no-spec
+nest g filter core/filters/mongodb-error
+
 #===========================
 # 5 . SQL with PostgreSQL
 #===========================

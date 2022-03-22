@@ -1,22 +1,21 @@
-import { Body, Controller, Get, Param, Post, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Put, ValidationPipe } from '@nestjs/common';
 import { AgenciesService } from './agencies.service';
-import { AgencyDto } from './dto/agency.dto';
 import { CreateAgencyDto } from './dto/create-agency.dto';
+import { UpdateAgencyDto } from './dto/update-agency.dto';
 
 @Controller('agencies')
 export class AgenciesController {
   constructor(private readonly agenciesService: AgenciesService) {}
-
   @Get()
-  getAll(): AgencyDto[] {
-    return this.agenciesService.selectAll();
+  getAll() {
+    return this.agenciesService.findAll();
   }
   @Get('/:id')
   getById(@Param('id') id: string) {
     return this.agenciesService.findById(id);
   }
   @Post()
-  postAgency(
+  create(
     @Body(
       new ValidationPipe({
         whitelist: true,
@@ -24,7 +23,11 @@ export class AgenciesController {
       }),
     )
     agency: CreateAgencyDto,
-  ): AgencyDto {
-    return this.agenciesService.insert(agency);
+  ) {
+    return this.agenciesService.create(agency);
+  }
+  @Put()
+  update(@Body() agency: UpdateAgencyDto) {
+    return this.agenciesService.update(agency);
   }
 }

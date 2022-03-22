@@ -1,26 +1,41 @@
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
 import { UtilsService } from 'src/utils/utils.service';
-import { AgencyDto } from './dto/agency.dto';
 import { CreateAgencyDto } from './dto/create-agency.dto';
-
+import { UpdateAgencyDto } from './dto/update-agency.dto';
+import { Agency } from './entities/agency.entity';
 @Injectable()
 export class AgenciesService {
-  private readonly agencies: Partial<AgencyDto>[] = [];
+  constructor(
+    private readonly utilsService: UtilsService,
+    @InjectModel(Agency.name) private readonly agencyModel: Model<Agency>,
+  ) {}
 
-  constructor(private readonly utilsService: UtilsService) {}
+  async findAll(): Promise<Agency[]> {
+    return await this.agencyModel.find();
+  }
 
-  selectAll(): AgencyDto[] {
-    return this.agencies;
+  async findById(id: string): Promise<Agency> {
+    const agency = await this.agencyModel.findById(id);
+    console.log(agency);
+    return agency;
   }
-  findById(id: string): Partial<AgencyDto> {
-    return this.agencies.find((agency) => agency.id === id);
+
+  async create(createAgency: CreateAgencyDto): Promise<Agency> {
+    const agency = await this.agencyModel.create({
+      ...createAgency,
+      _id: this.utilsService.createGUID(),
+    });
+    await agency.save();
+    return agency;
   }
-  insert(agency: CreateAgencyDto): AgencyDto {
-    const newAgency = {
-      id: this.utilsService.createGUID(),
-      ...agency,
-    };
-    this.agencies.push(newAgency);
-    return newAgency;
+  async update(agency: UpdateAgencyDto) {
+    const agency2 = await this.agencyModel.findByIdAndUpdate(agency._id, agency);
+    console.log(agency2);
+    return agency2;
+  }
+  async remove(id: string) {
+    return await this.agencyModel.findByIdAndRemove(id);
   }
 }
