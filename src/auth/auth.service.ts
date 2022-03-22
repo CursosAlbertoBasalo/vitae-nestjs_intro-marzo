@@ -15,16 +15,17 @@ export class AuthService {
   ) {}
 
   register(registration: RegistrationDto): CredentialsDto {
-    const user: User = {
-      id: this.utilsService.createGUID(),
-      ...registration,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    };
-    // To do: use argon2 to hash the password
-    this.users.push(user);
-    this.logger.debug('Added:' + JSON.stringify(user));
-    return this.buildCredentials(user);
+    return undefined;
+    // const user: User = {
+    //   id: this.utilsService.createGUID(),
+    //   ...registration,
+    //   createdAt: new Date(),
+    //   updatedAt: new Date(),
+    // };
+    // // To do: use argon2 to hash the password
+    // this.users.push(user);
+    // this.logger.debug('Added:' + JSON.stringify(user));
+    // return this.buildCredentials(user);
   }
   login(login: LoginDto) {
     const user: User = this.users.find(

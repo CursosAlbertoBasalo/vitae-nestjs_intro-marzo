@@ -39,6 +39,13 @@
 
 # 4 NoSql with MongoDB
 
+- [x] Install and run MongoDB
+- [x] Install and configure Mongoose
+- [] Service, repository and User entity with Mongoose
+- [] _Service, repository and Agency entity with Mongoose_
+- [] Identifiers and indexes
+- [] Deal with MongoDB errors
+
 # 5 SQL with PostgreSQL
 
 # 6 Production ready

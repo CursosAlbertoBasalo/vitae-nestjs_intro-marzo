@@ -1,14 +1,15 @@
 import { Body, Controller, Get, Post, Req, UseFilters, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { UnauthorizedErrorFilter } from 'src/core/filters/unauthorized-error.filter';
-import { AuthService } from './auth.service';
+import { AuthMongoService } from './auth-mongo.service';
+// import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { RegistrationDto } from './dto/registration.dto';
 import { GetUser } from './user.decorator';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(private readonly authService: AuthMongoService) {}
   @Get()
   @UseGuards(AuthGuard('jwt'))
   getToken(@Req() req) {
