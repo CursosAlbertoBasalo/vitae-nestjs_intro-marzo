@@ -3,4 +3,8 @@ export class CreateAgencyDto {
   @IsNotEmpty()
   @IsString()
   name: string;
+
+  @IsNotEmpty()
+  @IsString()
+  range: string;
 }
