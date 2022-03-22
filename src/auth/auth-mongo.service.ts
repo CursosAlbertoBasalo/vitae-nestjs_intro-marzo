@@ -33,8 +33,16 @@ export class AuthMongoService {
   }
 
   async login(login: LoginDto): Promise<CredentialsDto> {
-    const user = await this.userModel.create();
-    return undefined;
+    const user = await this.userModel.findOne({ email: login.email, password: login.password });
+    if (!user) throw new Error('Invalid credentials');
+    return this.buildCredentials(user);
+  }
+
+  async findById(id: string): Promise<User> {
+    const user = await this.userModel.findOne({ id });
+    // const user = await this.userModel.findById(id)
+    if (!user) throw new Error('Not found');
+    return user;
   }
 
   private buildCredentials(user: User): CredentialsDto {

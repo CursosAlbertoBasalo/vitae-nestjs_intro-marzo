@@ -41,8 +41,8 @@
 
 - [x] Install and run MongoDB
 - [x] Install and configure Mongoose
-- [] Service, repository and User entity with Mongoose
-- [] _Service, repository and Agency entity with Mongoose_
+- [x] Service and User entity modeled with Mongoose
+- [] _Service and User entity modeled with Mongoose_
 - [] Identifiers and indexes
 - [] Deal with MongoDB errors
 

@@ -13,7 +13,8 @@ export class AuthController {
   @Get()
   @UseGuards(AuthGuard('jwt'))
   getToken(@Req() req) {
-    return 'Todo va a salir bien' + JSON.stringify(req.user);
+    return this.authService.findById(req.user.userId);
+    //return 'Todo va a salir bien' + JSON.stringify(req.user);
   }
 
   @Get('me')
