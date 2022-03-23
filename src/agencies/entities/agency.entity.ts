@@ -7,13 +7,17 @@ import { Status } from '../models/status.enum';
 export class Agency {
   @Prop({ required: true })
   _id: mongoose.Types.ObjectId;
+
   @Prop({ required: true, unique: true })
   name: string;
+
   @Prop({ required: false, index: true })
   range: Ranges;
+
   @Prop({ required: false, index: true })
   status: Status;
-  @Prop({ required: false, index: true })
+
+  @Prop({ required: false, index: false })
   fee: number;
 }
 

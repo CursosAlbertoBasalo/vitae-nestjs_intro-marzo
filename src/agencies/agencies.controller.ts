@@ -1,9 +1,20 @@
-import { Body, Controller, Get, Param, Post, Put, ValidationPipe } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Put,
+  UseFilters,
+  ValidationPipe,
+} from '@nestjs/common';
+import { MongodbErrorFilter } from 'src/core/filters/mongodb-error.filter';
 import { AgenciesService } from './agencies.service';
 import { CreateAgencyDto } from './dto/create-agency.dto';
 import { UpdateAgencyDto } from './dto/update-agency.dto';
 
 @Controller('agencies')
+@UseFilters(MongodbErrorFilter)
 export class AgenciesController {
   constructor(private readonly agenciesService: AgenciesService) {}
   @Get()
