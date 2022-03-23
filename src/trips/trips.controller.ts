@@ -21,16 +21,16 @@ export class TripsController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.tripsService.findOne(+id);
+    return this.tripsService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateTripDto: UpdateTripDto) {
-    return this.tripsService.update(+id, updateTripDto);
+    return this.tripsService.update(id, updateTripDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.tripsService.remove(+id);
+    return this.tripsService.remove(id);
   }
 }

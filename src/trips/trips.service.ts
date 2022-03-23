@@ -1,26 +1,47 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { UtilsService } from 'src/utils/utils.service';
+import { EntityNotFoundError, Repository } from 'typeorm';
 import { CreateTripDto } from './dto/create-trip.dto';
 import { UpdateTripDto } from './dto/update-trip.dto';
+import { Trip } from './entities/trip.entity';
 
 @Injectable()
 export class TripsService {
-  create(createTripDto: CreateTripDto) {
-    return 'This action adds a new trip';
+  constructor(
+    @InjectRepository(Trip) private readonly tripRepository: Repository<Trip>,
+    private readonly utilsService: UtilsService,
+  ) {}
+
+  async create(createTripDto: CreateTripDto) {
+    const trip = this.tripRepository.create(createTripDto);
+    trip.id = this.utilsService.createGUID();
+    return await this.tripRepository.save(trip);
   }
 
-  findAll() {
-    return `This action returns all trips`;
+  async findAll() {
+    return await this.tripRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} trip`;
+  async findOne(id: string) {
+    const trip = await this.tripRepository.findOne(id, {});
+    if (!trip) throw new EntityNotFoundError(Trip, id);
+    return trip;
   }
 
-  update(id: number, updateTripDto: UpdateTripDto) {
-    return `This action updates a #${id} trip`;
+  async update(id: string, updateTripDto: UpdateTripDto) {
+    const trip = await this.findOne(id);
+    const updatedTrip = {
+      ...trip,
+      ...updateTripDto,
+      updatedAt: new Date(),
+    };
+    return await this.tripRepository.save(updatedTrip);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} trip`;
+  async remove(id: string) {
+    const trip = await this.findOne(id);
+    await this.tripRepository.remove(trip);
+    return {};
   }
 }

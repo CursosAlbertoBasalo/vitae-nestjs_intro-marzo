@@ -6,7 +6,24 @@ GET http://localhost:3000/trips
 ### POST /trips No api key header
 POST http://localhost:3000/trips
 
+### GET /trips with api key header
+GET http://localhost:3000/trips
+X-API-Key: my-secret-api-key
+
 ### POST /trips with api key header
 POST http://localhost:3000/trips
 X-API-Key: my-secret-api-key
+Content-Type: application/json
 
+{
+  "destination" : "The Moon",
+  "startDate": "2022-08-14T18:25:00.000Z",
+  "endDate": "2022-08-25T10:57:00.000Z",
+  "price": 15,
+  "places" :6,
+  "agencyId": "space-y"
+}
+
+### GET /trips with api key header
+GET http://localhost:3000/trips/kkl13u4mcksdtvlmx51ic
+X-API-Key: my-secret-api-key

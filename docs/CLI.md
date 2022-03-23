@@ -88,6 +88,10 @@ nest g filter core/filters/mongodb-error
 # 5 . SQL with PostgreSQL
 #===========================
 
+npm i @nestjs/typeorm typeorm pg
+code docker-compose.yml
+nest g filter core/filters/postgres-error
+
 #===========================
 # 6 . Production ready
 #===========================
