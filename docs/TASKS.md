@@ -42,9 +42,9 @@
 - [x] Install and run MongoDB
 - [x] Install and configure Mongoose
 - [x] Service and User entity modeled with Mongoose
-- [] _Service and User entity modeled with Mongoose_
-- [] Identifiers and indexes
-- [] Deal with MongoDB errors
+- [x] _Service and User entity modeled with Mongoose_
+- [x] Identifiers and indexes
+- [x] Deal with MongoDB errors
 
 # 5 SQL with PostgreSQL
 

@@ -5,6 +5,7 @@ import { UtilsService } from 'src/utils/utils.service';
 import { CreateAgencyDto } from './dto/create-agency.dto';
 import { UpdateAgencyDto } from './dto/update-agency.dto';
 import { Agency } from './entities/agency.entity';
+
 @Injectable()
 export class AgenciesService {
   constructor(
@@ -30,11 +31,14 @@ export class AgenciesService {
     await agency.save();
     return agency;
   }
+
   async update(agency: UpdateAgencyDto) {
     const agency2 = await this.agencyModel.findByIdAndUpdate(agency._id, agency);
+    if (!agency2) throw new Error('Agency not found');
     console.log(agency2);
     return agency2;
   }
+
   async remove(id: string) {
     return await this.agencyModel.findByIdAndRemove(id);
   }

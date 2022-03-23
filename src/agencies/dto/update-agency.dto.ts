@@ -1,4 +1,6 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
+import { Ranges } from '../models/range.enum';
+import { Status } from '../models/status.enum';
 
 export class UpdateAgencyDto {
   @IsNotEmpty()
@@ -8,6 +10,9 @@ export class UpdateAgencyDto {
   @IsString()
   name: string;
 
-  @IsString()
-  range: string;
+  @IsEnum(Ranges)
+  range: Ranges;
+
+  @IsEnum(Status)
+  status: Status;
 }
