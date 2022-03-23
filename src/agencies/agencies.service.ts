@@ -33,7 +33,7 @@ export class AgenciesService {
   }
 
   async update(agency: UpdateAgencyDto) {
-    const agency2 = await this.agencyModel.findByIdAndUpdate(agency._id, agency);
+    const agency2 = await this.agencyModel.findByIdAndUpdate(agency._id, agency, { new: true });
     if (!agency2) throw new Error('Agency not found');
     console.log(agency2);
     return agency2;

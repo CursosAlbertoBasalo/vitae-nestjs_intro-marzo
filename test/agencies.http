@@ -9,7 +9,7 @@ Content-Type: application/json
 
 
 ### GET /agencies/:id
-GET http://localhost:3000/agencies/l13g5ahshnlei4tyt6n
+GET http://localhost:3000/agencies/l13r2f25drchw1du05h
 
 ### PUT /agency BAD
 PUT  http://localhost:3000/agencies
@@ -26,8 +26,8 @@ PUT  http://localhost:3000/agencies
 Content-Type: application/json
 
 {
-  "_id" : "l13g5ahshnlei4tyt6n",
-  "name" : "SpaceY",
+  "_id" : "l13r2f25drchw1du05h",
+  "name" : "SpaceY-3",
   "range": "INTERPLANETARY",
   "status": "APPROVED"
 }
