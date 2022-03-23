@@ -1,0 +1,17 @@
+
+### GET /bookings
+GET http://localhost:3000/bookings
+
+
+### POST /bookings
+POST http://localhost:3000/bookings
+Content-Type: application/json
+
+{
+  "client" : "Mark",
+  "passengers": 2,
+  "tripId": "l13u4mcksdtvlmx51ic"
+}
+
+### GET /bookings
+GET http://localhost:3000/bookings/l13v5fl85uffzfuayj
