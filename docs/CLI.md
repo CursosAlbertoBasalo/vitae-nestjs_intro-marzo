@@ -91,7 +91,7 @@ nest g filter core/filters/mongodb-error
 npm i @nestjs/typeorm typeorm pg
 code docker-compose.yml
 nest g filter core/filters/postgres-error
-
+nest g resource payments
 #===========================
 # 6 . Production ready
 #===========================

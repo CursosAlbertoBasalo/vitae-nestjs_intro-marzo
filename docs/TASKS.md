@@ -53,7 +53,8 @@
 - [x] Service repository and Trip entity with TypeORM
 - [x] _Service repository and Booking entity with TypeORM_
 - [x] Deal with PostgreSQL errors
-- [] Relations and Transactions
+- [x] Relations and Transactions
+- [x] _Service repository and Payment entity with TypeORM_
 
 # 6 Production ready
 

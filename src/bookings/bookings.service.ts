@@ -1,5 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Payment } from 'src/payments/entities/payment.entity';
 import { Trip } from 'src/trips/entities/trip.entity';
 import { UtilsService } from 'src/utils/utils.service';
 import { Connection, EntityNotFoundError, Repository } from 'typeorm';
@@ -10,8 +11,9 @@ import { Booking } from './entities/booking.entity';
 @Injectable()
 export class BookingsService {
   constructor(
-    @InjectRepository(Booking) private readonly bookingRepository: Repository<Booking>,
     @InjectRepository(Trip) private readonly tripRepository: Repository<Trip>,
+    @InjectRepository(Booking) private readonly bookingRepository: Repository<Booking>,
+    @InjectRepository(Payment) private readonly paymentRepository: Repository<Payment>,
     private readonly utilsService: UtilsService,
     private readonly connection: Connection,
   ) {}
@@ -27,11 +29,18 @@ export class BookingsService {
     if (booking.passengers > trip.places) throw new Error('Not enough places');
     trip.places -= booking.passengers;
     booking.trip = trip;
+    const payment = this.paymentRepository.create({
+      id: this.utilsService.createGUID(),
+      creditCard: createBookingDto.creditCard,
+      amount: booking.passengers * trip.price,
+    });
+    if (!booking.payments) booking.payments = [];
+    booking.payments.push(payment);
     try {
       await this.tripRepository.save(trip);
-      throw new Error('Forced error');
-      // await this.bookingRepository.save(booking);
-      // await queryRunner.commitTransaction();
+      // throw new Error('Forced error');
+      await this.bookingRepository.save(booking);
+      await queryRunner.commitTransaction();
     } catch (error) {
       new Logger('BookingsService').error(error);
       await queryRunner.rollbackTransaction();
@@ -39,6 +48,7 @@ export class BookingsService {
     } finally {
       await queryRunner.release();
     }
+    return booking;
   }
 
   async findAll() {

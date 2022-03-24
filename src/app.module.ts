@@ -7,9 +7,10 @@ import { BookingsModule } from './bookings/bookings.module';
 import { CoreModule } from './core/core.module';
 import { TripsModule } from './trips/trips.module';
 import { UtilsModule } from './utils/utils.module';
+import { PaymentsModule } from './payments/payments.module';
 
 @Module({
-  imports: [AuthModule, UtilsModule, AgenciesModule, TripsModule, BookingsModule, CoreModule],
+  imports: [AuthModule, UtilsModule, AgenciesModule, TripsModule, BookingsModule, CoreModule, PaymentsModule],
   controllers: [AppController],
   providers: [AppService],
 })

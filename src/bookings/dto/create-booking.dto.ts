@@ -10,4 +10,7 @@ export class CreateBookingDto {
 
   @IsString()
   tripId: string;
+
+  @IsString()
+  creditCard: string;
 }

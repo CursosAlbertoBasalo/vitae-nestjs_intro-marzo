@@ -23,7 +23,8 @@ Content-Type: application/json
 {
   "client" : "Amancio",
   "passengers": 5,
-  "tripId": "l156laft6cd9euoh0jl"
+  "tripId": "l158kmczr55ai6bn5a",
+  "creditCard": "1234567890123456"
 }
 
 
@@ -44,5 +45,6 @@ Content-Type: application/json
 {
   "client" : "Warren",
   "passengers": 1,
-  "tripId": "l156laft6cd9euoh0jl"
+  "tripId": "l158kmczr55ai6bn5a",
+  "creditCard": "1234567890123456"
 }
