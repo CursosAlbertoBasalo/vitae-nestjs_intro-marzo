@@ -96,4 +96,9 @@ nest g resource payments
 # 6 . Production ready
 #===========================
 
+npm i @nestjs/config
+code .env
+npm i @nestjs/swagger swagger-ui-express
+http://localhost:3000/api
+
 ```
