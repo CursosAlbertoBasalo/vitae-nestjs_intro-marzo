@@ -20,12 +20,13 @@ export class TripsService {
   }
 
   async findAll() {
-    return await this.tripRepository.find();
+    return await this.tripRepository.find({ relations: ['bookings'] });
   }
 
   async findOne(id: string) {
-    const trip = await this.tripRepository.findOne(id, {});
+    const trip = await this.tripRepository.findOne(id, { relations: ['bookings'] });
     if (!trip) throw new EntityNotFoundError(Trip, id);
+    this.tripRepository.save(trip);
     return trip;
   }
 

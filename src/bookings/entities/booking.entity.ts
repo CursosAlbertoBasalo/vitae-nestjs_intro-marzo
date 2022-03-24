@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Trip } from 'src/trips/entities/trip.entity';
+import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
 
 @Entity('bookings')
 export class Booking {
@@ -11,8 +12,11 @@ export class Booking {
   @Column()
   passengers: number;
 
-  @Column()
-  tripId: string;
+  // @Column()
+  // tripId: string;
+
+  @ManyToOne(() => Trip, (trip) => trip.bookings)
+  trip: Trip;
 
   @Column({ type: 'timestamp', default: () => 'now()' })
   createdAt: Date;

@@ -10,8 +10,39 @@ Content-Type: application/json
 {
   "client" : "Mark",
   "passengers": 2,
-  "tripId": "l13u4mcksdtvlmx51ic"
+  "tripId": "l157boofiuohk6ojjz"
 }
 
 ### GET /bookings
-GET http://localhost:3000/bookings/l13v5fl85uffzfuayj
+GET http://localhost:3000/bookings/l156laft6cd9euoh0jl
+
+### POST /bookings
+POST http://localhost:3000/bookings
+Content-Type: application/json
+
+{
+  "client" : "Amancio",
+  "passengers": 5,
+  "tripId": "l156laft6cd9euoh0jl"
+}
+
+
+### POST /bookings
+POST http://localhost:3000/bookings
+Content-Type: application/json
+
+{
+  "client" : "Amancio",
+  "passengers": 3,
+  "tripId": "l156laft6cd9euoh0jl"
+}
+
+### POST /bookings
+POST http://localhost:3000/bookings
+Content-Type: application/json
+
+{
+  "client" : "Warren",
+  "passengers": 1,
+  "tripId": "l156laft6cd9euoh0jl"
+}

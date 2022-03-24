@@ -49,11 +49,11 @@
 # 5 SQL with PostgreSQL
 
 - [x] Install and run PostgreSQL
-- [] Install and configure TypeORM
-- [] Service repository and Trip entity with TypeORM
-- [] _Service repository and Booking entity with TypeORM_
-- [] Deal with PostgreSQL errors
-- [] Transactions
+- [x] Install and configure TypeORM
+- [x] Service repository and Trip entity with TypeORM
+- [x] _Service repository and Booking entity with TypeORM_
+- [x] Deal with PostgreSQL errors
+- [] Relations and Transactions
 
 # 6 Production ready
 

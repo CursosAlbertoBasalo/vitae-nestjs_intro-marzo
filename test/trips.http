@@ -25,5 +25,5 @@ Content-Type: application/json
 }
 
 ### GET /trips with api key header
-GET http://localhost:3000/trips/kkl13u4mcksdtvlmx51ic
+GET http://localhost:3000/trips/l157boofiuohk6ojjz
 X-API-Key: my-secret-api-key
