@@ -25,7 +25,12 @@ const mongoUri = `mongodb://${mongoUser}:${mongoPass}@${mongoHost}/${mongoDB}?au
       password: process.env.DB_PASS,
       database: 'nest',
       autoLoadEntities: true,
-      synchronize: true,
+      // synchronize: true,
+      // entities: ['dist/**/*.entity.js'],
+      // migrations: ['dist/migrations/*.js'],
+      // cli: {
+      //   migrationsDir: 'src/migrations',
+      // },
     }),
     ThrottlerModule.forRoot({ ttl: 60, limit: 10 }),
   ],
