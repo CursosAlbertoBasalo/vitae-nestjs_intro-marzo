@@ -27,6 +27,8 @@
 - [x] _Auth Controller (register(registration):credentials login(credentials):credentials)_
 - [x] _UnauthorizedErrorFilter_
 
+> [Nest LifeCycle](https://slides.com/yariv-gilad/nest-js-request-lifecycle/fullscreen#/1)
+
 ---
 
 <footer>
