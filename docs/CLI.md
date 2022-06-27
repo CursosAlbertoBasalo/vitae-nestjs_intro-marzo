@@ -5,6 +5,12 @@ npx nest new nest-intro -p npm
 cd nest-intro
 npm run start:dev
 
+nest g pipe core/pipes/positiveNumber
+nest g filter core/filters/businessError
+
+nest g module core
+nest g middleware core/middlewares/monitor
+
 # Generate feature module
 nest g module agencies
 # Generate route controller

@@ -2,8 +2,9 @@ import { ArgumentsHost, Catch, ExceptionFilter, HttpStatus } from '@nestjs/commo
 import { Response } from 'express';
 @Catch()
 export class BusinessErrorFilter implements ExceptionFilter {
-  catch(exception: Error, host: ArgumentsHost) {
+  public catch(exception: Error, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
+    // ! Warning: Express specific code
     const response = ctx.getResponse<Response>();
     const statusCode = HttpStatus.BAD_REQUEST;
     response.status(statusCode).json({
